@@ -10,7 +10,6 @@ jobs:
     env:
       AWS_REGION: ap-northeast-1
       ECR_REPOSITORY: moco
-    working_directory: ~/project/eidos
     steps:
       - uses: actions-ecosystem/action-remove-labels@v1
         with:
