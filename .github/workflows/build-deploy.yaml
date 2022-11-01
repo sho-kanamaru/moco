@@ -51,7 +51,7 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: Build gradle
-        uses: ./gradlew build
+        run: ./gradlew build
 
       - name: Docker build and push
         env:
