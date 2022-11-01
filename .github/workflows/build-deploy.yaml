@@ -22,7 +22,7 @@ jobs:
           labels: 'DevDeploy: triggered'
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -40,7 +40,7 @@ jobs:
           java-version: "17"
           distribution: "adopt"
 
-      - name: Cache Gradle packages
+      - name: Cache gradle packages
         uses: actions/cache@v2
         with:
           path: |
@@ -50,7 +50,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Build Gradle
+      - name: Build gradle
         uses: ./gradlew build
 
       - name: Docker build and push
